@@ -1,6 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
+import routes from './routes/user.route'
 // create new express app and save it as "app"
 const app = express();
 
@@ -23,10 +25,15 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
     .catch(err => { console.log(db); console.error(err); });
 
 
+// parse requests of content-type - application/json
+app.use(bodyParser.json())
+
 // create a route for the app
 app.get('/', (req, res) => {
     res.send('Hello World');
 });
+
+routes(app);
 
 // make the server listen to requests
 app.listen(PORT, () => {

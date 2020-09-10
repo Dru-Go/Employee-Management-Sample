@@ -9,16 +9,17 @@ const AccountSchema = new Schema({
         type: String,
         required: true
     },
-    date_Of_birth: {
+    date_of_birth: {
         type: Date,
         required: true
     },
     gender: {
         type: String,
-        required: true
+        required: true,
+        enum: ["male", "female"]
     },
     salary: {
-        type: Double,
+        type: Schema.Types.Decimal128,
         required: true
     }
 });
