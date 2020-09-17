@@ -3,8 +3,8 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-// Create the User Schema.
-const AccountSchema = new Schema({
+// Create an Employee Schema.
+const EmployeeSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -24,6 +24,6 @@ const AccountSchema = new Schema({
     }
 });
 
-const User = mongoose.model('Account', AccountSchema);
+const User = mongoose.model('Employees', EmployeeSchema);
 
 export default User;

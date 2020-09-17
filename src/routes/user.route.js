@@ -8,11 +8,11 @@ export default (app) => {
     app.get('/users', findAll);
 
     // Retrieve a single user with userId
-    app.get('/users/:userId', findOne);
+    app.get('/users', findOne);
 
     // Update a user with userId
-    app.put('/users/:userId', update);
+    app.put('/users', update);
 
     // Delete a user with userId
-    app.delete('/users/:userId', Delete);
+    app.delete('/users', Delete);
 }

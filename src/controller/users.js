@@ -72,7 +72,7 @@ export const update = (req, res) => {
     }
 
     // Find employees and update it with the request body
-    Note.findByIdAndUpdate(req.params.noteId, {
+    Employee.findByIdAndUpdate(req.body._id, {
         name: req.body.name || "Untitled user",
         date_Of_birth: req.body.date_Of_birth,
         gender: req.body.gender,
@@ -81,25 +81,25 @@ export const update = (req, res) => {
         .then(empl => {
             if (!empl) {
                 return res.status(404).send({
-                    message: "Employees not found with id " + req.params.employeeId
+                    message: "Employees not found with id " + req.body.employeeId
                 });
             }
             res.send(empl);
         }).catch(err => {
             if (err.kind === 'ObjectId') {
                 return res.status(404).send({
-                    message: "Employees not found with id " + req.params.employeeId
+                    message: "Employees not found with id " + req.body.employeeId
                 });
             }
             return res.status(500).send({
-                message: "Error updating employees with id " + req.params.employeeId
+                message: "Error updating employees with id " + req.body.employeeId
             });
         });
 };
 
 // Delete a employee with the specified employeeId in the request
 export const Delete = (req, res) => {
-    Employee.findByIdAndRemove(req.params.employeeId)
+    Employee.findByIdAndRemove(req.body.id)
         .then(empl => {
             if (!empl) {
                 return res.status(404).send({

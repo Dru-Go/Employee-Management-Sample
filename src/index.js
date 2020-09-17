@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import routes from './routes/user.route'
+import cors from 'cors'
 // create new express app and save it as "app"
 const app = express();
 
@@ -32,6 +33,8 @@ app.use(bodyParser.json())
 app.get('/', (req, res) => {
     res.send('Hello World');
 });
+
+app.use(cors())
 
 routes(app);
 
