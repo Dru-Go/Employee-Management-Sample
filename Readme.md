@@ -7,32 +7,31 @@
   - [Codebase](#codebase)
     - [Technologies](#technologies)
     - [Folder Structure](#folder-structure)
-    - [Code Style](#code-style)
   - [First time setup](#first-time-setup)
   - [Running the app locally](#running-the-app-locally)
 - [Technical](docs/)
   - [Deployment](docs/deployments.md)
  
 
-### Objective 
+## Objective 
 Create a simple CRUD application for an employee management
 
 
+## Codebase
 
 ### Technologies
 - ** Nodejs API **: We use Node.js to power our servers. Almost all of the code you'll touch in this codebase will be JavaScript.
 
 - **Backend End**
 	- Node js
-    - Express
-    - Mongoose
-    - Jest 
-    - Husky
+  - Express
+  - Mongoose
+  - Jest 
 
 
 ### Folder structure
 
-Client 
+Backend 
 
 ```sh
 backend/
@@ -43,18 +42,25 @@ backend/
 ```
 
 
-### First time setup
+## First time setup
 
-#### Running the app locally
+## Running the app locally
 
 - ### Backend
 
 ```sh
-git clone https://github.com/Dru-Go/Employee-Management-Sample
+git clone https://github.com/Dru-Go/Employee-Management-Sample.git
 
 npm i
 
-npm run dev
+npm run dev 
 
 ```
+## Technical
+
+### Deployment 
+
+Deployed API is running on heroku servers
+
+Link to the server: [link](https://dashboard.heroku.com/apps/employee-crud-api-1) 
 
